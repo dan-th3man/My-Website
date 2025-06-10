@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html-lang="en"> 
+<head>
+	<title>Daniel Morales </title> 
+	<link href = ./style.css rel="stylesheet">
+</head>
+<body> 
+	<div class="wrapper">
+	<main>
+		<!-- Beginning of web page -->
+		<header>
+			<nav> 
+				<a href = "./portfolio.html">Home</a>  
+				<a href = "./academics.html">Academics</a> 
+				<a href = ./work.html>Work Experiance</a>  
+				<a href = "Resume 2022.pdf" target = "blank">Resume</a>
+			</nav>
+		</header> 
+		<h1>
+			Daniel Morales 
+		</h1> 
+		<div class='headshot'>
+		<img alt = Headshot, src=./images/professional_3.jpg width=500px height=600px>
+		</div>	
+		<div class="aboutMe">
+			<h3>About Me</h3> 
+			<p> Hi, Im Daniel Morales I am currently working n my Bachelors in Computer Science and CUNY Queens College. Currently I am an IT support Specialist at JP Solved it LLc and I am a drafstman at 5Boro Mapping, more details can be found in the work expereiance section. I am very passionate about computer science all aspects of it genuinly intrest me but my favorite aspect about the study is programming. There is a very real sense of pride that comes from creating a complex program that preforms as expected and an even greater feeling when I have struggled through a new trechnique or idea and succesfullt implement it in my programs</p> 
+		</div> 	
+		<div class = personalIterests>
+			<h3>Personal Interests<h3> 
+			<p>While school has taken up most of my life for the past few yuears I do still find time to maintin personal interests</p> 
+			<ul> 
+				<li>Making and painting scale models, mostly Gundam model kits</li> 
+				<li>Weightlifting</li> 
+				<li>learning 3D modeling and creating 3D printed objects</li>  
+			</ul> 
+		</div>
+		<div class="dropdownInterests"> 
+			<!--Modelkits-->
+			<div class="dropdown">
+			  	<button onclick="toggleDropdown('modelkits')" class="dropbtn">Model Kits</button>
+			  	<div id="modelkits" class="dropdown-content">
+			    	<img src="./images/gundam_1.jpg" alt="Gundam Model">
+					<img src="./images/gundam_2.jpg" alt="Gundam Model">
+					<img src="./images/gundam_3.jpg" alt="Gundam Model">
+					<img src="./images/gundam_4.jpg" alt="Gundam Model">
+					<img src="./images/gundam_5.jpg" alt="Gundam Model">
+					<img src="./images/gundam_6.jpg" alt="Gundam Model">
+					<img src="./images/gundam_7.jpg" alt="Gundam Model">
+			 	</div>
+			</div>
+		
+			<!--Weightlifting-->
+			<div class="dropdown">
+				<button onclick="toggleDropdown('weightlifting')" class="dropbtn">Weight Lifting</button>
+				<div id="weightlifting" class="dropdown-content">
+					<video width="500" controls> 
+						<source src="./images/weightlifting_1.mp4" type="video/mp4">
+					</video>
+					<img src="./images/weightlifting_2.jpg" alt="Picture with Chris Bumstead">
+					<img src="./images/weightlifting_3.jpg" alt="Picture with Nick Walker">
+					<img src="./images/weightlifting_4.jpg" alt="Tireflip Picture">
+					
+				 </div>
+			</div>
+			<!--3d Printing-->
+			<div class="dropdown">
+				<button onclick="toggleDropdown('3dprints')" class="dropbtn">3D Printing</button>
+				<div id="3dprints" class="dropdown-content">
+					<img src="./images/3d_1.jpg" alt="battery mount adapter">
+					<img src="./images/3d_2.jpg" alt="mounted battery">
+					<img src="./images/3d_3.jpg" alt="Apple watch strap holder">
+					<img src="./images/3d_4.jpg" alt="Oranization Containers">
+					<img src="./images/3d_5.jpg" alt="Amiibo Stands">
+					
+				 </div>
+			</div>
+		</div>
+		<script>
+			document.querySelectorAll('.dropbtn').forEach(button => {
+			  button.addEventListener('click', () => {
+			    const dropdownContent = button.nextElementSibling;
+
+			    // Close all other dropdowns first and pause videos inside them
+			    document.querySelectorAll('.dropdown-content').forEach(content => {
+			      if (content !== dropdownContent) {
+			        content.style.display = 'none';
+			        // Pause all videos inside this dropdown content
+			        content.querySelectorAll('video').forEach(video => {
+			          video.pause();
+			          video.currentTime = 0;
+			        });
+			      }
+			    });
+
+			    // Toggle this dropdown
+			    if (dropdownContent.style.display === 'grid') {
+			      dropdownContent.style.display = 'none';
+			      // Pause all videos inside this dropdown content too
+			      dropdownContent.querySelectorAll('video').forEach(video => {
+			        video.pause();
+			        video.currentTime = 0;
+			      });
+			    } else {
+			      dropdownContent.style.display = 'grid';
+			    }
+			  });
+			});
+		</script>
+	</main>
+		<footer> 
+			<h1>Contact Information</h1> 
+			<p>Phone number: (718) 743-8408</p> 
+			<p><a href="mailto:dmorales720@gmail.com">Email:dmorales720@gmail.com</a></p>
+		</footer> 
+	</div>
+</body> 
+</html> 
